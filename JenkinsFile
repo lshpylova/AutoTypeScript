@@ -6,7 +6,7 @@ pipeline {
                 script {
                     def img = 'node:18-alpine'
                     // Запуск контейнера и сохранение его ID
-                    def containerId = docker.image(img).run('-d -p 80:80')
+                    def containerId = docker.image(img).run('-p 80:80')
                     
                     try {
                         sh '''
