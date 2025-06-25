@@ -1,13 +1,10 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') {
-            agent {
-                    img = 'node:18-alpine'
-                    docker.image("$(img)").run('-d  -p 80:80')
-                }
-            }
+        stage('Build') {            
             steps {
+                img = 'node:18-alpine'
+                docker.image("$(img)").run('-d  -p 80:80')
                 sh '''
                 ls -la
                 node --version
@@ -19,3 +16,4 @@ pipeline {
             }
         }
     }
+}
