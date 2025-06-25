@@ -5,9 +5,10 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'node --eval "console.log(process.platform,process.env.CI)"'
+                sh 'node -v'
+                sh 'npm install'
+                sh 'npx cypress run'
             }
         }
     }
 }
-s
