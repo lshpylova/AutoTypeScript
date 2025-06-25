@@ -1,12 +1,12 @@
 pipeline {
-    agent any 
-    stages {
-        stage('Build') {
+  //  agent any 
+  //  stages {
+      //  stage('Build') {
             agent {
                 docker {
                     image 'node:18-alpine'
-                    label 'keen_poincare'
-                    reuseNode true
+                //    label 'keen_poincare'
+                //    reuseNode true
                 }
             }
             steps {
@@ -20,5 +20,5 @@ pipeline {
                 ''' 
             }
         }
-    }
-}
+   /// }
+//}
